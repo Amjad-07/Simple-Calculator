@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>CALCULATOR</h2>
+        <div class="calculator">
+            <input placeholder="0" id="output">
+            <button onclick="Clear()">Cl</button>
+
+            <button onclick="del()">Delete</button>
+            <button onclick="display('%')">%</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="calculate()">=</button>
+        </div>
+    </div>
+    <script>
+        var outputElement = document.getElementById("output");
+        function display(num) {
+            outputElement.value += num;
+
+        }
+        function calculate() {
+            try {
+                outputElement.value = eval(outputElement.value);
+            }
+            catch (err) {
+                alert('invalid')
+            }
+        }
+
+        function del() {
+
+            outputElement.value = outputElement.value.slice(0, -1);
+        }
+        function Clear() {
+            outputElement.value = "";
+        }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
